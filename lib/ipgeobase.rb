@@ -3,8 +3,10 @@
 require_relative "ipgeobase/version"
 require 'net/http'
 require 'happymapper'
+
 module Ipgeobase
   class Error < StandardError; end
+  
   def self.lookup(ip)
     data = get_data(ip)
 
@@ -14,6 +16,7 @@ module Ipgeobase
   end
 
   private
+  
   def self.get_data(ip)
     url = URI.parse("http://ip-api.com/xml/#{ip}")
 
